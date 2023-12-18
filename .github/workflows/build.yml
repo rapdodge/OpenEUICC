@@ -45,7 +45,7 @@ jobs:
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         run: |
-          touch signing.properties
+          touch keystore.properties
           echo keystore.password="$SIGNING_STORE_PASSWORD" > keystore.properties
           echo key.alias="$SIGNING_KEY_ALIAS" >> keystore.properties
           echo key.password="$SIGNING_KEY_PASSWORD" >> keystore.properties
