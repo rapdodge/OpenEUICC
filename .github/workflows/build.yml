@@ -46,12 +46,12 @@ jobs:
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         run: |
           touch signing.properties
-          echo keystore.password="$SIGNING_STORE_PASSWORD" > signing.properties
-          echo key.alias="$SIGNING_KEY_ALIAS" >> signing.properties
-          echo key.password="$SIGNING_KEY_PASSWORD" >> signing.properties
+          echo keystore.password="$SIGNING_STORE_PASSWORD" > keystore.properties
+          echo key.alias="$SIGNING_KEY_ALIAS" >> keystore.properties
+          echo key.password="$SIGNING_KEY_PASSWORD" >> keystore.properties
                   
-          echo "cat signing.properties"
-          cat signing.properties
+          echo "cat keystore.properties"
+          cat keystore.properties
 
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
